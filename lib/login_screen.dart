@@ -20,7 +20,16 @@ class LoginScreen extends StatelessWidget {
                 color: Color(0XFF3F3D56),
                 fontWeight: FontWeight.w600,
               )),
-          TextField()
+          const TextField(
+              style: TextStyle(
+                color: Color(0XFF3F3D56),
+              ),
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "Enter Username",
+                label: Text("Enter Username"),
+                icon: Icon(Icons.person),
+              ))
         ],
       )),
     );
