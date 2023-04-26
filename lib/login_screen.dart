@@ -1,3 +1,4 @@
+import 'package:basic_app/home_screen.dart';
 import 'package:basic_app/sign_up_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -73,7 +74,13 @@ class _LoginScreenState extends State<LoginScreen> {
           Padding(
             padding: const EdgeInsets.all(0),
             child: InkWell(
-                onTap: null,
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ));
+                },
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 15),
                   width: 430,
@@ -100,20 +107,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(fontSize: 15, color: Color(0XFF3F3D56)),
               ),
               TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SignUpScreen(),
-                        ));
-                  },
-                  child: const Text(
-                    "Create an Account",
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Color(0XFF3F3D56),
-                        fontWeight: FontWeight.bold),
-                  ))
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUpScreen(),
+                      ));
+                },
+                child: const Text(
+                  "Create an Account",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Color(0XFF3F3D56),
+                      fontWeight: FontWeight.bold),
+                ),
+              )
             ],
           )
         ],
